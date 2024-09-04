@@ -38,3 +38,12 @@ Then("I delete the search query from the search field", () => {
 Then("I should not be able to press the search button", () => {
     cy.get(".search-button").should("be.disabled");
 })
+
+Then("I type a4tasgsss3 into the search input and press search button", () => {
+    cy.get("input").type("a4tasgsss3");
+    cy.get(".search-button").click();
+});
+
+Then("I should see the No Images Found message", () => {
+    cy.get("#root > div > div:nth-child(2) > div > div > div > h2").should("have.text", "No Images Found")
+});

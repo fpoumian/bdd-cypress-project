@@ -9,3 +9,8 @@ Feature: Snapshot website test scenarios
     Then I click the Food button and see Food header and 24 images in results
     Then I delete the search query from the search field
     Then I should not be able to press the search button
+  Scenario: visiting the home page - unsuccessful search
+    Given I visit the home page
+    Then I click in the text input
+    Then I type a4tasgsss3 into the search input and press search button
+    Then I should see the No Images Found message
